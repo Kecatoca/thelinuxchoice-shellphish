@@ -1,4 +1,4 @@
-# ShellPhish v1.0
+# ShellPhish v1.1
 ## Author: github.com/thelinuxchoice
 ## IG: instagram.com/thelinuxchoice
 ### Don't copy this code without give me the credits, nerd! 
