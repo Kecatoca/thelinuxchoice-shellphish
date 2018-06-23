@@ -222,6 +222,7 @@ wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip > /dev/null
 
 if [[ -e ngrok-stable-linux-arm.zip ]]; then
 unzip ngrok-stable-linux-arm.zip > /dev/null 2>&1
+chmod +x ngrok
 rm -rf ngrok-stable-linux-arm.zip
 fi
 
@@ -230,6 +231,7 @@ else
 wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-386.zip > /dev/null 2>&1 
 if [[ -e ngrok-stable-linux-386.zip ]]; then
 unzip ngrok-stable-linux-386.zip > /dev/null 2>&1
+chmod +x ngrok
 rm -rf ngrok-stable-linux-386.zip
 fi
 fi
