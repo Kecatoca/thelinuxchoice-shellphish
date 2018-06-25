@@ -52,7 +52,7 @@ wp_attempt_focus();
 if(typeof wpOnload=='function')wpOnload();
 </script>
 
-	<p id="backtoblog"><a href="http://localhost/">&larr; Back to The Linux Choice</a></p>
+	<p id="backtoblog"><a href="http://localhost/">&larr; Back</a></p>
 		
 	</div>
 
